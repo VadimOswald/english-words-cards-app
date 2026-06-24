@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="theme-switcher" id="theme-switcher" title="Тёмная тема">
+    <div class="theme-switcher-thumb">
+      <span class="theme-switcher-icon" id="theme-icon">☀</span>
+    </div>
+  </div>
+
+  <!-- SETUP SCREEN -->
+  <div id="screen-setup" class="screen">
+    <div class="setup-container">
+      <h1 class="hero-title">ENGLISH<br>CARDS</h1>
+      <p class="hero-sub">Учи английские слова в игровом формате</p>
+
+      <div id="quick-stats" class="quick-stats"></div>
+
+      <div class="mode-selector">
+        <button class="mode-btn selected" data-mode="1p">1 ИГРОК</button>
+        <button class="mode-btn" data-mode="2p">2 ИГРОКА</button>
+      </div>
+
+      <div class="card-count-input">
+        <label>Количество карточек</label>
+        <input type="number" id="card-count" value="20" min="2" max="9999" step="2">
+        <div id="count-error" class="error-msg"></div>
+      </div>
+
+      <button id="start-btn" class="action-btn primary-btn">НАЧАТЬ</button>
+      <button id="stats-btn" class="action-btn secondary-btn">СТАТИСТИКА</button>
+    </div>
+  </div>
+
+  <!-- SELECTION SCREEN -->
+  <div id="screen-selection" class="screen" style="display:none">
+    <div id="dual-score" class="dual-score">
+      <div id="score-p1" class="dual-score-item active">
+        <span class="dual-score-label">Игрок 1</span>
+        <span class="dual-score-value">0</span>
+      </div>
+      <div class="dual-score-divider"></div>
+      <div id="score-p2" class="dual-score-item">
+        <span class="dual-score-label">Игрок 2</span>
+        <span class="dual-score-value">0</span>
+      </div>
+    </div>
+    <div class="game-header">
+      <div class="header-item">
+        <span class="header-label">ОСТАЛОСЬ</span>
+        <span id="remaining" class="header-value">0</span>
+      </div>
+    </div>
+    <div class="progress-container">
+      <div id="progress-bar" class="progress-fill"></div>
+    </div>
+    <div id="streak-display" class="streak-display" style="display:none"></div>
+    <div id="turn-banner" class="turn-banner"></div>
+    <div class="selection-prompt">Выбери карточку</div>
+    <div id="selection-cards" class="cards-grid"></div>
+  </div>
+
+  <!-- CARD SCREEN -->
+  <div id="screen-card" class="screen" style="display:none">
+    <div id="dual-score-card" class="dual-score">
+      <div id="score-p1-card" class="dual-score-item active">
+        <span class="dual-score-label">Игрок 1</span>
+        <span class="dual-score-value">0</span>
+      </div>
+      <div class="dual-score-divider"></div>
+      <div id="score-p2-card" class="dual-score-item">
+        <span class="dual-score-label">Игрок 2</span>
+        <span class="dual-score-value">0</span>
+      </div>
+    </div>
+    <div id="streak-display-card" class="streak-display" style="display:none"></div>
+    <div id="turn-banner-card" class="turn-banner" style="display:none"></div>
+    <div class="card-container">
+      <div class="card-header">
+        <span id="task-title" class="task-label"></span>
+      </div>
+      <div class="card-body">
+        <div id="card-prompt" class="card-prompt"></div>
+        <div id="card-hint" class="card-hint"></div>
+      </div>
+      <div class="card-actions">
+        <button id="done-btn" class="action-btn done-btn">ГОТОВО</button>
+        <button id="skip-btn" class="action-btn skip-btn">ПРОПУСТИТЬ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS SCREEN -->
+  <div id="screen-results" class="screen" style="display:none">
+    <div class="results-container">
+      <h1 class="hero-title">РЕЗУЛЬТАТЫ</h1>
+      <div id="results-content" class="results-content"></div>
+      <button id="restart-btn" class="action-btn primary-btn">НОВАЯ ИГРА</button>
+    </div>
+  </div>
+
+  <!-- STATS SCREEN -->
+  <div id="screen-stats" class="screen" style="display:none">
+    <div class="stats-container">
+      <h1 class="hero-title">СТАТИСТИКА</h1>
+      <div id="stats-summary" class="stats-summary"></div>
+      <div id="stats-words" class="stats-words"></div>
+      <div class="stats-actions">
+        <button id="stats-reset-btn" class="action-btn danger-btn">СБРОСИТЬ</button>
+        <button id="stats-back-btn" class="action-btn secondary-btn">НАЗАД</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/words.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
